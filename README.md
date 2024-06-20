@@ -23,18 +23,6 @@ Program Pendaftaran Rute Penerbangan adalah aplikasi berbasis web yang memungkin
 ## Structure 
 directory tree:
 
-│   index.php
-│   README.md
-│   
-├───controller
-│       action.php
-│       
-├───data
-│       data.json
-│       
-├───img
-└───library
-        index.css
 
 ## Instalasi
 1. Clone repositori atau unduh file proyek.
