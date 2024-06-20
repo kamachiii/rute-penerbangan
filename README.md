@@ -20,6 +20,10 @@ Program Pendaftaran Rute Penerbangan adalah aplikasi berbasis web yang memungkin
 - Server web (misalnya, Apache, Nginx)
 - Browser web untuk melihat output dari program
 
+## Structure 
+directory tree:
+
+
 ## Instalasi
 1. Clone repositori atau unduh file proyek.
     bash
