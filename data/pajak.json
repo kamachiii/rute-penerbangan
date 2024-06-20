@@ -1,0 +1,55 @@
+[
+    {
+        "asal": [
+            {
+                "nama_bandara": "Soekarno-Hatta",
+                "inisial": "CGK",
+                "pajak": 50000
+            },
+
+            {
+                "nama_bandara": "Husein Sastranegara",
+                "inisial": "BDO",
+                "pajak": 30000
+            },
+
+            {
+                "nama_bandara": "Abdul Rachman Saleh",
+                "inisial": "MLG",
+                "pajak": 40000
+            },
+            {
+                "nama_bandara": "Juanda",
+                "inisial": "SUB",
+                "pajak": 40000
+            }
+        ]
+    },
+    {
+        "tujuan": [
+            {
+                "nama_bandara": "Ngurah Rai",
+                "inisial": "DPS",
+                "pajak": "80000"
+            },
+
+            {
+                "nama_bandara": "Hasanuddin",
+                "inisial": "UPG",
+                "pajak": "70000"
+            },
+
+            {
+                "nama_bandara": "Innantawan",
+                "inisial": "INX",
+                "pajak": "90000"
+            },
+
+            {
+                "nama_bandara": "Sultan Iskandarmuda",
+                "inisial": "BTJ",
+                "pajak": "70000"
+            }
+        ]
+    }
+]
