@@ -1,9 +1,10 @@
 <!-- Untuk frontend -->
-<!-- Definisi variabel -->
 <?php
+// Definisi variabel
     $fileJson = "./data/data.json";
-    $data = json_decode(file_get_contents($fileJson, true));
-    sort($data);
+    $data = json_decode(file_get_contents($fileJson), true);
+
+    sort($data); // sort data
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +19,10 @@
   <link rel="stylesheet" href="./library/style.css">
 </head>
 <body>
+  <!-- Container Form -->
   <div class="container">
     <h2 class="text-center mb-4">Pendaftaran Rute Penerbangan</h2>
+    <!-- Form -->
     <form action="./controller/action.php" method="post">
       <div class="form-group">
         <label for="jenisPesawat">Maskapai :</label>
@@ -51,10 +54,13 @@
       </div>
       <button type="submit" class="btn btn-primary btn-block">Beli</button>
     </form>
+    <!-- End Form -->
   </div>
+  <!-- End Container Form -->
 
-  <!-- Table data -->
-   <div class="container">
+  <!-- Container Table -->
+  <div class="container">
+     <!-- Table data -->
     <h2 class="text-center mb-4">Daftar Rute Tersedia</h2>
     <table class="table table-bordered">
         <tr>
@@ -69,18 +75,19 @@
         <?php
             foreach($data as $key => $value) {
                 echo "<tr>
-                    <td>" . $value->nama_maskapai . "</td>
-                    <td>" . $value->asal_penerbangan . "</td>
-                    <td>" . $value->tujuan_penerbangan . "</td>
-                    <td>" . $value->harga_tiket . "</td>
-                    <td>" . $value->pajak . "</td>
-                    <td>" . $value->total_harga . "</td>
+                    <td>" . $value['nama_maskapai'] . "</td>
+                    <td>" . $value['asal_penerbangan'] . "</td>
+                    <td>" . $value['tujuan_penerbangan'] . "</td>
+                    <td>" . $value['harga_tiket'] . "</td>
+                    <td>" . $value['pajak'] . "</td>
+                    <td>" . $value['total_harga'] . "</td>
                 </tr>";
             }
         ?>
     </table>
+    <!-- End Table data -->
    </div>
-   <!-- End Table data -->
+   <!-- End Container Table -->
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

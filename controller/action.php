@@ -1,63 +1,87 @@
 <?php
 
-// Inisialisasi variabel untuk menyimpan nilai dari form
-$nama_maskapai = $_POST['nama_maskapai'];
-$asal_penerbangan = $_POST['asal_penerbangan'];
-$tujuan_penerbangan = $_POST['tujuan_penerbangan'];
-$harga_tiket = $_POST['harga_tiket'];
+// Fungsi untuk mengambil data pajak
+function ambilDataDariJson($file) {
+    $data = json_decode(file_get_contents("../data/$file"), true);
+    return $data;
+}
 
-// Mengambil data dari file pajak.json dan mendekode JSON menjadi array asosiatif
-$dataPajak = json_decode(file_get_contents("../data/pajak.json"), true);
+// Fungsi untuk menyimpan data ke JSON
+function simpanDataKeJson($data, $file) {
+    $fileJson = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents("../data/$file", $fileJson);
+}
 
-// Mencari indeks di array 'asal' yang memiliki nilai 'inisial' yang sama dengan nilai dari $asal_penerbangan
-$keyAsal = array_search($asal_penerbangan, array_column($dataPajak[0]['asal'], 'inisial'));
-// Mengambil nama bandara asal sesuai dengan indeks yang telah ditemukan
-$asal_penerbangan = $dataPajak[0]['asal'][$keyAsal]['nama_bandara'];
-
-// Mencari indeks di array 'tujuan' yang memiliki nilai 'inisial' yang sama dengan nilai $tujuan_penerbangan
-$keyTujuan = array_search($tujuan_penerbangan, array_column($dataPajak[1]['tujuan'], 'inisial'));
-// Mengambil nama bandara tujuan sesuai dengan indeks yang telah ditemukan
-$tujuan_penerbangan = $dataPajak[1]['tujuan'][$keyTujuan]['nama_bandara'];
-
+// Fungsi untuk mencari key index dari inisial
+function cariKeyIndex($inisial, $kategori, $data) {
+    // Menggunakan array_search untuk mencari dan array_column unrtuk menghasilkan array baru yang berisikan nilai dari kolom 'inisial'
+    $key = array_search($inisial, array_column($data[$kategori], 'inisial'));
+    return $key;
+}
 
 // Fungsi untuk menghitung total pajak
 function hitungPajak($keyAsal, $keyTujuan, $dataPajak) {
     // Mengambil nilai pajak dari bandara asal berdasarkan indeks yang ditemukan
-    $pajakAsal = $dataPajak[0]['asal'][$keyAsal]['pajak'];
+    $pajakAsal = $dataPajak['asal'][$keyAsal]['pajak'];
 
     // Mengambil nilai pajak dari bandara tujuan berdasarkan indeks yang ditemukan
-    $pajakTujuan = $dataPajak[1]['tujuan'][$keyTujuan]['pajak'];
+    $pajakTujuan = $dataPajak['tujuan'][$keyTujuan]['pajak'];
 
     // Mengembalikan jumlah dari pajak asal dan tujuan
     return $pajakAsal + $pajakTujuan;
 }
 
+// Fungsi untuk menghitung total harga
+
+function hitungTotalHarga($hargaTiket, $pajak) {
+    // Mengembalikan jumlah dari harga tiket dan pajak
+    return $hargaTiket + $pajak;
+}
+
+// Inisialisasi variabel untuk menyimpan nilai dari form
+$namaMaskapai = $_POST['nama_maskapai'];
+$asalPenerbangan = $_POST['asal_penerbangan'];
+$tujuanPenerbangan = $_POST['tujuan_penerbangan'];
+$hargaTiket = $_POST['harga_tiket'];
+
+// Mengambil data dari file pajak.json melalui function dataPajak
+$dataPajak = ambilDataDariJson('pajak.json');
+
+// Menentukan Key Index asal dengan function cariKeyIndex
+$keyAsal = cariKeyIndex($asalPenerbangan, 'asal', $dataPajak);
+
+// Menentukan Key Index tujuan dengan function cariKeyIndex
+$keyTujuan = cariKeyIndex($tujuanPenerbangan, 'tujuan', $dataPajak);
+
+// Mengambil nama bandara asal
+$asalPenerbangan = $dataPajak['asal'][$keyAsal]['nama_bandara'];
+
+// Mengambil nama bandara tujuan
+$tujuanPenerbangan = $dataPajak['tujuan'][$keyAsal]['nama_bandara'];
 
 // Menghitung total pajak menggunakan fungsi hitungPajak dengan memasukan parameter $keyAsal, $keyTujuan, $dataPajak
 $totalPajak = hitungPajak($keyAsal, $keyTujuan, $dataPajak);
 
-// Menentukan total harga
-$total_harga = $harga_tiket + $totalPajak;
+// Menentukan total harga dengan function hitungTotalHarga
+$totalHarga = hitungTotalHarga($hargaTiket, $totalPajak);
 
-// Mengambil data yang telah ada di data.json
-$data = json_decode(file_get_contents('../data/data.json'), true);
+// Mengambil data yang ada dengan function ambilDataDariJson
+$data = ambilDataDariJson('data.json');
 
 // Menyimpan data inputan ke array
 $data[] = array(
-    'nama_maskapai' => $nama_maskapai,
-    'asal_penerbangan' => $asal_penerbangan,
-    'tujuan_penerbangan' => $tujuan_penerbangan,
-    'harga_tiket' => $harga_tiket,
+    'nama_maskapai' => $namaMaskapai,
+    'asal_penerbangan' => $asalPenerbangan,
+    'tujuan_penerbangan' => $tujuanPenerbangan,
+    'harga_tiket' => $hargaTiket,
     'pajak' => $totalPajak,
-    'total_harga' => $total_harga
+    'total_harga' => $totalHarga
 );
 
-// Meng-encode data menjadi json
-$jsonfile = json_encode($data, JSON_PRETTY_PRINT);
+// Menyimpan data inputan ke dalam JSON dengan function simpanDataKeJson
+simpanDataKeJson($data, 'data.json');
 
-// Menyimpan data ke dalam anggota-json
-file_put_contents('../data/data.json', $jsonfile);
-
-header('location:../index.php');
+// Melempar user ke halaman index.php
+header('location: ../index.php');
 exit();
 ?>
