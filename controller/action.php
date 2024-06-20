@@ -1,0 +1,3 @@
+<?php
+// Untuk backend
+?>
