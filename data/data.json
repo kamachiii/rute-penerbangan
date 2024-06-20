@@ -1,1 +1,55 @@
-// data
+[
+    {
+        "nama_maskapai": "Air Lion",
+        "asal_penerbangan": "Soekarno-Hatta",
+        "tujuan_penerbangan": "Sultan Iskandarmuda",
+        "harga_tiket": "200000",
+        "pajak": "12000",
+        "total_harga": "212000"
+    },
+
+    {
+        "nama_maskapai": "Adam Air",
+        "asal_penerbangan": "Soekarno-Hatta",
+        "tujuan_penerbangan": "Sultan Iskandarmuda",
+        "harga_tiket": "250000",
+        "pajak": "12000",
+        "total_harga": "262000"
+    },
+
+    {
+        "nama_maskapai": "Batik Air",
+        "asal_penerbangan": "Hussain Sastranegara",
+        "tujuan_penerbangan": "Ngurah Rai",
+        "harga_tiket": "190000",
+        "pajak": "11000",
+        "total_harga": "201000"
+    },
+
+    {
+        "nama_maskapai": "Batavia Air",
+        "asal_penerbangan": "Hussain Sastranegara",
+        "tujuan_penerbangan": "Hassanudin",
+        "harga_tiket": "200000",
+        "pajak": "10000",
+        "total_harga": "210000"
+    },
+
+    {
+        "nama_maskapai": "Cardig Air",
+        "asal_penerbangan": "Abdul Rachman Saleh",
+        "tujuan_penerbangan": "innanwatan",
+        "harga_tiket": "20000",
+        "pajak": "13000",
+        "total_harga": "213000"
+    },
+    
+    {
+        "nama_maskapai": "Garuda Indonesia",
+        "asal_penerbangan": "Juanda",
+        "tujuan_penerbangan": "Hassanudin",
+        "harga_tiket": "200000",
+        "pajak": "11000",
+        "total_harga": "211000"
+    }
+]
