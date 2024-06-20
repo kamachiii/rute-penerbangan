@@ -1,0 +1,24 @@
+/* styling */
+body {
+    background-image: url('https://images.unsplash.com/photo-1482686115713-0fbcaced6e28');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: lighten; /* Efek transparan */
+  }
+
+  .container {
+    max-width: 600px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow untuk efek raised look */
+  }
+
+  .form-group label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+  }

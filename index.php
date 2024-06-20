@@ -1,4 +1,11 @@
 <!-- Untuk frontend -->
+<!-- Definisi variabel -->
+<?php
+    $fileJson = "./data/data.json";
+    $data = json_decode(file_get_contents($fileJson, true));
+    sort($data);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,44 +15,20 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles -->
-  <style>
-    body {
-      background-image: url('https://images.unsplash.com/photo-1482686115713-0fbcaced6e28');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      background-blend-mode: lighten; /* Efek transparan */
-    }
-
-    .container {
-      max-width: 600px;
-      margin-top: 50px;
-      background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan */
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow untuk efek raised look */
-    }
-
-    .form-group label {
-      font-weight: bold;
-      text-align: left;
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="./library/style.css">
 </head>
 <body>
   <div class="container">
     <h2 class="text-center mb-4">Pendaftaran Rute Penerbangan</h2>
-    <form>
+    <form action="./controller/action.php" method="post">
       <div class="form-group">
         <label for="jenisPesawat">Maskapai :</label>
-        <input type="text" class="form-control" id="jenisPesawat" required>
+        <input type="text" class="form-control" id="jenisPesawat" name="nama_maskapai" required>
       </div>
       <div class="form-group">
         <label for="bandaraAsal">Bandara Asal:</label>
-        <select class="form-control" id="bandaraAsal" required>
-          <option value="" disabled selected>Pilih Bandara Asal</option>
+        <select class="form-control" id="bandaraAsal" name="asal_penerbangan" required>
+          <option value="" disabled selected hidden>Pilih Bandara Asal</option>
           <option value="CGK">Soekarno-Hatta (CGK)</option>
           <option value="BDO">Husein Sastranegara (BDO)</option>
           <option value="MLG">Abdul Rahman Saleh (MLG)</option>
@@ -54,8 +37,8 @@
       </div>
       <div class="form-group">
         <label for="bandaraTujuan">Bandara Tujuan:</label>
-        <select class="form-control" id="bandaraTujuan" required>
-          <option value="" disabled selected>Pilih Bandara Tujuan</option>
+        <select class="form-control" id="bandaraTujuan" name="tujuan_penerbangan" required>
+          <option value="" disabled selected hidden>Pilih Bandara Tujuan</option>
           <option value="DPS">Ngurah Rai (DPS)</option>
           <option value="UOG">Hasanuddin (UPG)</option>
           <option value="INX">Inanwatan (INX)</option>
@@ -64,11 +47,40 @@
       </div>
       <div class="form-group">
         <label for="harga">Harga Tiket:</label>
-        <input type="text" class="form-control" id="harga" required>
+        <input type="number" class="form-control" id="harga" name="harga_tiket" required>
       </div>
       <button type="submit" class="btn btn-primary btn-block">Beli</button>
     </form>
   </div>
+
+  <!-- Table data -->
+   <div class="container">
+    <h2 class="text-center mb-4">Daftar Rute Tersedia</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Maskapai</th>
+            <th>Bandara Asal</th>
+            <th>Bandara Tujuan</th>
+            <th>Harga Tiket</th>
+            <th>Pajak</th>
+            <th>Total Harga</th>
+        </tr>
+
+        <?php
+            foreach($data as $key => $value) {
+                echo "<tr>
+                    <td>" . $value->nama_maskapai . "</td>
+                    <td>" . $value->asal_penerbangan . "</td>
+                    <td>" . $value->tujuan_penerbangan . "</td>
+                    <td>" . $value->harga_tiket . "</td>
+                    <td>" . $value->pajak . "</td>
+                    <td>" . $value->total_harga . "</td>
+                </tr>";
+            }
+        ?>
+    </table>
+   </div>
+   <!-- End Table data -->
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
