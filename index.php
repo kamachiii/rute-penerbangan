@@ -37,14 +37,14 @@
 <body>
   <div class="container">
     <h2 class="text-center mb-4">Pendaftaran Rute Penerbangan</h2>
-    <form>
+    <form method="POST" action="controller/action.php">
       <div class="form-group">
         <label for="jenisPesawat">Maskapai :</label>
-        <input type="text" class="form-control" id="jenisPesawat" required>
+        <input type="text" class="form-control" id="jenisPesawat" name="jenisPesawat" required>
       </div>
       <div class="form-group">
         <label for="bandaraAsal">Bandara Asal:</label>
-        <select class="form-control" id="bandaraAsal" required>
+        <select class="form-control" id="bandaraAsal" name="bandaraAsal" required>
           <option value="" disabled selected>Pilih Bandara Asal</option>
           <option value="CGK">Soekarno-Hatta (CGK)</option>
           <option value="BDO">Husein Sastranegara (BDO)</option>
@@ -54,10 +54,10 @@
       </div>
       <div class="form-group">
         <label for="bandaraTujuan">Bandara Tujuan:</label>
-        <select class="form-control" id="bandaraTujuan" required>
+        <select class="form-control" id="bandaraTujuan" name="bandaraTujuan" required>
           <option value="" disabled selected>Pilih Bandara Tujuan</option>
           <option value="DPS">Ngurah Rai (DPS)</option>
-          <option value="UOG">Hasanuddin (UPG)</option>
+          <option value="UPG">Hasanuddin (UPG)</option>
           <option value="INX">Inanwatan (INX)</option>
           <option value="BTJ">Sultan Iskandarmuda (BTJ)</option>
         </select>
