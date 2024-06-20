@@ -70,5 +70,13 @@
         "harga_tiket": "90000",
         "pajak": 110000,
         "total_harga": 200000
+    },
+    {
+        "nama_maskapai": "lion",
+        "asal_penerbangan": "Husein Sastranegara",
+        "tujuan_penerbangan": "Innantawan",
+        "harga_tiket": "20000",
+        "pajak": 120000,
+        "total_harga": 140000
     }
 ]
