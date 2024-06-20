@@ -7,7 +7,6 @@
         "pajak": "12000",
         "total_harga": "212000"
     },
-
     {
         "nama_maskapai": "Adam Air",
         "asal_penerbangan": "Soekarno-Hatta",
@@ -16,7 +15,6 @@
         "pajak": "12000",
         "total_harga": "262000"
     },
-
     {
         "nama_maskapai": "Batik Air",
         "asal_penerbangan": "Hussain Sastranegara",
@@ -25,7 +23,6 @@
         "pajak": "11000",
         "total_harga": "201000"
     },
-
     {
         "nama_maskapai": "Batavia Air",
         "asal_penerbangan": "Hussain Sastranegara",
@@ -34,7 +31,6 @@
         "pajak": "10000",
         "total_harga": "210000"
     },
-
     {
         "nama_maskapai": "Cardig Air",
         "asal_penerbangan": "Abdul Rachman Saleh",
@@ -43,7 +39,6 @@
         "pajak": "13000",
         "total_harga": "213000"
     },
-    
     {
         "nama_maskapai": "Garuda Indonesia",
         "asal_penerbangan": "Juanda",
@@ -51,5 +46,29 @@
         "harga_tiket": "200000",
         "pajak": "11000",
         "total_harga": "211000"
+    },
+    {
+        "nama_maskapai": "Kmail dodol",
+        "asal_penerbangan": "Husein Sastranegara",
+        "tujuan_penerbangan": "Sultan Iskandarmuda",
+        "harga_tiket": "100000",
+        "pajak": 100000,
+        "total_harga": 200000
+    },
+    {
+        "nama_maskapai": "Garuda Jaya",
+        "asal_penerbangan": "Soekarno-Hatta",
+        "tujuan_penerbangan": "Ngurah Rai",
+        "harga_tiket": "890000",
+        "pajak": 130000,
+        "total_harga": 1020000
+    },
+    {
+        "nama_maskapai": "Sumber Jaya",
+        "asal_penerbangan": "Abdul Rachman Saleh",
+        "tujuan_penerbangan": "Sultan Iskandarmuda",
+        "harga_tiket": "90000",
+        "pajak": 110000,
+        "total_harga": 200000
     }
 ]
