@@ -6,8 +6,8 @@
 Program Pendaftaran Rute Penerbangan adalah aplikasi berbasis web yang memungkinkan pengguna untuk memilih bandara asal dan tujuan, serta menghitung total harga tiket termasuk pajak. Program ini dibangun menggunakan PHP untuk sisi server dan Bootstrap untuk tampilan.
 
 ## Fitur
+- Penambahan Nama Maskapai: Pengguna dapat menambahkan nama maskapai yang akan ditambahkan rute penerbangannya.
 - Pemilihan Bandara Asal dan Tujuan: Pengguna dapat memilih bandara asal dan tujuan dari daftar yang telah disediakan.
-- Pengisian Informasi Pemesan: Pengguna dapat memasukkan nama mereka sebagai pemesan tiket.
 - Penentuan Harga Tiket: Harga tiket dihitung berdasarkan rute yang dipilih.
 - Penambahan Pajak: Pajak ditambahkan ke harga tiket untuk mendapatkan total harga yang harus dibayar.
 - Output Total Harga: Total harga tiket termasuk pajak ditampilkan setelah pengguna mengisi formulir.
