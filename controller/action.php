@@ -1,16 +1,17 @@
-ini all
 <?php
 
 // Fungsi untuk mengambil data pajak
 function ambilDataDariJson($file) {
     $data = json_decode(file_get_contents("../data/$file"), true);
     return $data;
+    //Fungsi ini bertujuan untuk mengambil data pajak dari file JSON yang tersimpan di direktori ../data. 
 }
 
 // Fungsi untuk menyimpan data ke JSON
 function simpanDataKeJson($data, $file) {
     $fileJson = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents("../data/$file", $fileJson);
+    //Fungsi ini berfungsi untuk menyimpan data pajak ke dalam file JSON di direktori ../data
 }
 
 // Fungsi untuk mencari key index dari inisial
@@ -18,6 +19,7 @@ function cariKeyIndex($inisial, $kategori, $data) {
     // Menggunakan array_search untuk mencari dan array_column unrtuk menghasilkan array baru yang berisikan nilai dari kolom 'inisial'
     $key = array_search($inisial, array_column($data[$kategori], 'inisial'));
     return $key;
+    //Fungsi ini bertujuan untuk mencari indeks (key) dari array data pajak berdasarkan inisial dan kategori yang diberikan
 }
 
 // Fungsi untuk menghitung total pajak
