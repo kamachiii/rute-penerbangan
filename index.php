@@ -59,7 +59,7 @@
   <!-- End Container Form -->
 
   <!-- Container Table -->
-  <div class="container">
+  <div class="container tabel">
      <!-- Table data -->
     <h2 class="text-center mb-4">Daftar Rute Tersedia</h2>
     <table class="table table-bordered">
