@@ -1,3 +1,4 @@
+ini all
 <?php
 
 // Fungsi untuk mengambil data pajak
