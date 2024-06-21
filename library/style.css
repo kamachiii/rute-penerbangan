@@ -6,6 +6,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-blend-mode: lighten; /* Efek transparan */
+    background-color: aliceblue;
   }
 
   .container {

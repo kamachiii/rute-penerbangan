@@ -46,5 +46,21 @@
         "harga_tiket": "200000",
         "pajak": "11000",
         "total_harga": "211000"
+    },
+    {
+        "nama_maskapai": "Batik Air",
+        "asal_penerbangan": "Juanda",
+        "tujuan_penerbangan": "Sultan Iskandarmuda",
+        "harga_tiket": "1200000",
+        "pajak": 130000,
+        "total_harga": 1330000
+    },
+    {
+        "nama_maskapai": "Batik Air",
+        "asal_penerbangan": "Abdul Rachman Saleh",
+        "tujuan_penerbangan": "Innantawan",
+        "harga_tiket": "200000",
+        "pajak": 110000,
+        "total_harga": 310000
     }
 ]
