@@ -3,7 +3,7 @@
 ![Versi PHP](https://img.shields.io/badge/PHP-8.0.0%2B-blue)
 
 ## Deskripsi
-Program Pendaftaran Rute Penerbangan adalah aplikasi berbasis web yang memungkinkan pengguna untuk memilih bandara asal dan tujuan, serta menghitung total harga tiket termasuk pajak. Aplikasi ini juga memungkinkan pengguna untuk memasukkan nama pemesan. Program ini dibangun menggunakan PHP untuk sisi server dan Bootstrap untuk tampilan.
+Program Pendaftaran Rute Penerbangan adalah aplikasi berbasis web yang memungkinkan pengguna untuk memilih bandara asal dan tujuan, serta menghitung total harga tiket termasuk pajak. Program ini dibangun menggunakan PHP untuk sisi server dan Bootstrap untuk tampilan.
 
 ## Fitur
 - Pemilihan Bandara Asal dan Tujuan: Pengguna dapat memilih bandara asal dan tujuan dari daftar yang telah disediakan.
