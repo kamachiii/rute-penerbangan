@@ -1,24 +1,62 @@
 /* styling */
-body {
-    background-image: url('https://images.unsplash.com/photo-1482686115713-0fbcaced6e28');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-blend-mode: lighten; /* Efek transparan */
-  }
 
-  .container {
-    max-width: 600px;
-    margin-top: 50px;
-    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow untuk efek raised look */
-  }
-
-  .form-group label {
-    font-weight: bold;
-    text-align: left;
-    display: block;
-  }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      background: linear-gradient(to bottom, rgba(0, 0, 255, 0.6), rgba(0, 0, 255, 0.6)), url('https://source.unsplash.com/1600x900/?airplane') no-repeat center center/cover;
+      color: #fff;
+      padding: 150px 0;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    .hero-section p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .form-section {
+      background-color: #fff;
+      padding: 50px 0;
+    }
+    .feature-box {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature-box:hover {
+      transform: translateY(-10px);
+    }
+    .feature-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .feature-box p {
+      font-size: 1.1rem;
+    }
+    .table-custom {
+      margin-top: 30px;
+    }
+    .table-custom th,
+    .table-custom td {
+      vertical-align: middle !important;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+    }
+    .list-unstyled li {
+      font-size: 1.1rem;
+    }
